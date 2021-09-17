@@ -1,0 +1,18 @@
+/*Home Navigation Bar*/
+body nav {
+  height: 60px;
+  background-color: black;
+}
+
+nav ul {
+  color: white;
+}
+
+body {
+  height: 100%;
+  background-image: url(../images/redwoods-background.jpg);
+  background-size: cover;
+  background-position: fixed;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
