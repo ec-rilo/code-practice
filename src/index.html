@@ -10,27 +10,36 @@
     <div class="bg"></div>
     <nav>
       <ul class="nav-menu">
+        <li><a href="#">Home</a></li>
         <li><a href="#">About</a></li>
-        <li><a href="#">Portfolio</a></li>
+        <li>
+          <a href="#">Portfolio</a>
+          <ul class="nav-menu-item-dd expand-contract-contracted">
+            <a href="#"><li>La Mexicana - Mexican Restaurant</li></a>
+            <a href="#"><li>To-Do List</li></a>
+            <a href="#"><li>Joseph Oliver - Photography Website</li></a>
+          </ul>
+        </li>
         <li><a href="#">Contact</a></li>
       </ul>
-      <ul class="nav-logo-container">
+      <a href="#" class="nav-logo-container">
         <div class="hp-logo"></div>
         <p>Edgar Carrillo Dev</p>
-      </ul>
+      </a>
       <ul class="nav-social-menu">
         <li>
           <a href="https://www.facebook.com/ecarrillo046" target="_blank">
             <img
-              class="nav-social-btn"
-              src="../src/images/social-media-logos/facebook-icon.png"
-          /></a>
+              class="nav-social-btn fb-social-btn"
+              src="<%=require('../src/images/social-media-logos/facebook-icon.png')%>"
+            />
+          </a>
         </li>
         <li>
           <a href="https://www.linkedin.com/in/ecarrillo046/" target="_blank">
             <img
               class="nav-social-btn"
-              src="../src/images/social-media-logos/linkdin-icon.png"
+              src="<%=require('../src/images/eclogo.png')%>"
           /></a>
         </li>
       </ul>
