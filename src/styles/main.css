@@ -68,11 +68,13 @@ nav {
 }
 
 .expand-contract-contracted {
+  visibility: hidden;
   margin-top: 0px;
   opacity: 0;
 }
 
 .expand-contract-expanded {
+  visibility: visible;
   margin-top: 30px;
   opacity: 1;
 }
@@ -87,7 +89,7 @@ nav {
   padding: 15px;
   padding-top: 20px;
   border-radius: 0 0 5px 5px;
-  transition: margin-top 1s, opacity 0.5s;
+  transition: margin-top 1s, opacity 0.5s, visibility 0.5s;
 }
 
 .nav-social-menu {
