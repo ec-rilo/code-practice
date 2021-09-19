@@ -39,8 +39,26 @@ children.forEach((child) => {
     grandChildren.forEach((grandChild) => {
       if (grandChild.nodeName === "UL") {
         let parent = grandChild.parentNode;
+        let parentInnerText = parent.children[0].innerHTML;
         let grandChildDD = new DropDown(grandChild);
         parent.addEventListener("click", () => {
+          children.forEach((child) => {
+            child.addEventListener(
+              "click",
+              () => {
+                let childInnerText = child.children[0].innerHTML;
+                if (
+                  grandChildDD.status() === "visible" &&
+                  childInnerText !== parentInnerText
+                ) {
+                  grandChildDD.makeHidden();
+                  grandChildDD.toggleStatus();
+                  console.log(grandChildDD.status());
+                }
+              },
+              { once: true }
+            );
+          });
           if (grandChildDD.status() === "visible") {
             grandChildDD.makeHidden();
             grandChildDD.toggleStatus();
