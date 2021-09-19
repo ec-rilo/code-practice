@@ -43,7 +43,7 @@ nav {
   align-items: center;
 }
 
-.nav-logo-container .hp-logo {
+.hp-logo {
   background-image: url(../images/EC-WHITE.png);
   height: 30px;
   width: 30px;
@@ -67,6 +67,29 @@ nav {
   transform: translate(-50%, -50%);
 }
 
+.expand-contract-contracted {
+  margin-top: 0px;
+  opacity: 0;
+}
+
+.expand-contract-expanded {
+  margin-top: 30px;
+  opacity: 1;
+}
+
+.nav-menu-item-dd {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: black;
+  width: 100%;
+  padding: 15px;
+  padding-top: 20px;
+  border-radius: 0 0 5px 5px;
+  transition: margin-top 1s, opacity 0.5s;
+}
+
 .nav-social-menu {
   display: flex;
   gap: 20px;
@@ -76,4 +99,8 @@ nav {
   width: 30px;
   height: 30px;
   object-fit: contain;
+}
+
+@media (max-width: 1112px) {
+  /* At this width remove the p tag next to the logo */
 }
