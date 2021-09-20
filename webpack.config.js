@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   entry: "./src/index.js",
@@ -11,8 +12,8 @@ module.exports = {
         loader: "html-loader",
       },
       {
-        test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
@@ -33,6 +34,7 @@ module.exports = {
       title: "Practice Program Template",
       template: "./src/index.html",
     }),
+    new MiniCssExtractPlugin(),
   ],
   devtool: "inline-source-map",
   output: {
