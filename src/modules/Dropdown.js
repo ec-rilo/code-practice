@@ -1,5 +1,6 @@
-// If the user clicks on the portfolio tab
-// It becomes a dropdown
+/**
+ * Drop Down Menu Module
+ */
 
 class DropDown {
   constructor(element) {
@@ -31,43 +32,44 @@ class DropDown {
   }
 }
 
-let ul = document.querySelector(".nav-menu");
-let children = ul.childNodes;
-children.forEach((child) => {
-  if (child.nodeName === "LI") {
-    let grandChildren = child.childNodes;
-    grandChildren.forEach((grandChild) => {
-      if (grandChild.nodeName === "UL") {
-        let parent = grandChild.parentNode;
-        let parentInnerText = parent.children[0].innerHTML;
-        let grandChildDD = new DropDown(grandChild);
-        parent.addEventListener("click", () => {
-          children.forEach((child) => {
-            child.addEventListener(
-              "click",
-              () => {
-                let childInnerText = child.children[0].innerHTML;
-                if (
-                  grandChildDD.status() === "visible" &&
-                  childInnerText !== parentInnerText
-                ) {
-                  grandChildDD.makeHidden();
-                  grandChildDD.toggleStatus();
-                  console.log(grandChildDD.status());
-                }
-              },
-              { once: true }
-            );
+let initDDMenus = (() => {
+  let navMenu = document.querySelector(".nav-menu");
+  let navMenuChildren = navMenu.childNodes;
+  navMenuChildren.forEach((menuChild) => {
+    if (menuChild.nodeName === "LI") {
+      let menuChildrenElems = menuChild.childNodes;
+      menuChildrenElems.forEach((menuChild) => {
+        if (menuChild.nodeName === "UL") {
+          let menuParent = menuChild.parentNode;
+          let menuParentText = menuParent.children[0].innerHTML;
+          let menuChildDD = new DropDown(menuChild);
+          menuParent.addEventListener("click", () => {
+            navMenuChildren.forEach((menuChild) => {
+              menuChild.addEventListener(
+                "click",
+                () => {
+                  let menuChildText = menuChild.children[0].innerHTML;
+                  if (
+                    menuChildDD.status() === "visible" &&
+                    menuChildText !== menuParentText
+                  ) {
+                    menuChildDD.makeHidden();
+                    menuChildDD.toggleStatus();
+                  }
+                },
+                { once: true }
+              );
+            });
+            if (menuChildDD.status() === "visible") {
+              menuChildDD.makeHidden();
+              menuChildDD.toggleStatus();
+            } else if (menuChildDD.status() === "hidden") {
+              menuChildDD.makeVisible();
+              menuChildDD.toggleStatus();
+            }
           });
-          if (grandChildDD.status() === "visible") {
-            grandChildDD.makeHidden();
-            grandChildDD.toggleStatus();
-          } else if (grandChildDD.status() === "hidden") {
-            grandChildDD.makeVisible();
-            grandChildDD.toggleStatus();
-          }
-        });
-      }
-    });
-  }
-});
+        }
+      });
+    }
+  });
+})();
