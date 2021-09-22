@@ -10,13 +10,20 @@
   src: url("../fonts/Montserrat/Montserrat-SemiBold.ttf") format("truetype");
 }
 
-body {
+/* body {
   height: 100%;
   background-image: url(../images/redwoods-background.jpg);
   background-size: cover;
   background-position: fixed;
   background-repeat: no-repeat;
   background-attachment: fixed;
+} */
+
+.bg {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  max-width: 100%;
 }
 
 a {
