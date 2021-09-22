@@ -159,6 +159,34 @@ nav {
   color: red;
 }
 
-@media (max-width: 1112px) {
-  /* At this width remove the p tag next to the logo */
+@media (max-width: 500px) {
+  nav {
+    display: none;
+  }
+
+  .not-ham-btn {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    margin-top: 40px;
+    border-radius: 0 10px 10px 0;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .not-ham-btn > div {
+    width: 13px;
+    height: 2px;
+    background-color: black;
+  }
+
+  .not-ham-btn > div:nth-of-type(1) {
+    margin-right: 12px;
+  }
+
+  .not-ham-btn > div:nth-of-type(2) {
+  }
 }
