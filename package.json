@@ -1,6 +1,6 @@
 {
   "name": "code-practice",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "For making practice code and testing new concepts",
   "main": "index.js",
   "scripts": {
