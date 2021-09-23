@@ -167,8 +167,8 @@ nav {
   .not-ham-btn {
     display: flex;
     flex-direction: column;
-    background-color: white;
-    width: 50px;
+    background-color: black;
+    width: 40px;
     height: 50px;
     margin-top: 40px;
     border-radius: 0 10px 10px 0;
@@ -177,16 +177,34 @@ nav {
     gap: 5px;
   }
 
+  @keyframes slide-left {
+    0% {
+      transform: translateX(0%);
+    }
+
+    20% {
+      transform: translateX(50%);
+    }
+
+    100% {
+      transform: translateX(-300%);
+    }
+  }
+
   .not-ham-btn > div {
     width: 13px;
     height: 2px;
-    background-color: black;
+    background-color: white;
   }
 
   .not-ham-btn > div:nth-of-type(1) {
     margin-right: 12px;
+    /* animation: slide-left 1s;
+    animation-fill-mode: forwards; */
   }
 
   .not-ham-btn > div:nth-of-type(2) {
+    /* animation: 1s slide-left 0.2s;
+    animation-fill-mode: forwards; */
   }
 }
