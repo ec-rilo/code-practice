@@ -231,23 +231,20 @@ nav {
   }
 
   .home-intro-text {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
     top: 50%;
     left: 10%;
     transform: translate(0, -50%);
-    font-size: 16vw;
+    font-size: 4em;
     user-select: none;
     width: initial;
     text-align: initial;
   }
 
   .intro-text-1 {
-    display: block;
+    display: inline-block;
   }
 
   .intro-text-2 {
-    display: block;
+    display: inline-block;
   }
 }
