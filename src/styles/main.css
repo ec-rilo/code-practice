@@ -14,15 +14,11 @@
   font-family: "Montserrat Extrabold";
   src: url("../fonts/Montserrat/Montserrat-ExtraBold.ttf") format("truetype");
 }
+/* Pages */
 
-/* body {
-  height: 100%;
-  background-image: url(../images/redwoods-background.jpg);
-  background-size: cover;
-  background-position: fixed;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-} */
+.mobile-home-pg {
+  display: none;
+}
 
 body {
   background-color: black;
@@ -129,7 +125,6 @@ nav {
   top: 50%;
   left: 10%;
   transform: translate(0, -50%);
-  font-size: 5em;
   font-size: 6vw;
   font-family: "Montserrat Extrabold";
   user-select: none;
@@ -160,18 +155,44 @@ nav {
   color: red;
 }
 
-@media (max-width: 500px) {
-  nav {
+@media (max-width: 1130px) {
+  .nav-logo-container p {
     display: none;
   }
 
+  nav {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .home-intro-text {
+    font-size: 8vw;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 800px) {
+  .home-pg {
+    display: none;
+  }
+
+  .mobile-home-pg {
+    display: block;
+  }
+
   .not-ham-btn {
+    position: fixed;
     display: flex;
     flex-direction: column;
     background-color: black;
     width: 50px;
     height: 50px;
     margin-top: 40px;
+    margin-left: 20px;
     border-radius: 0 10px 10px 0;
     justify-content: center;
     align-items: center;
@@ -193,7 +214,7 @@ nav {
   }
 
   .not-ham-btn > div {
-    width: 13px;
+    width: 15px;
     height: 2px;
     background-color: white;
   }
@@ -207,5 +228,26 @@ nav {
   .not-ham-btn > div:nth-of-type(2) {
     /* animation: 1s slide-left 0.2s;
     animation-fill-mode: forwards; */
+  }
+
+  .home-intro-text {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    top: 50%;
+    left: 10%;
+    transform: translate(0, -50%);
+    font-size: 16vw;
+    user-select: none;
+    width: initial;
+    text-align: initial;
+  }
+
+  .intro-text-1 {
+    display: block;
+  }
+
+  .intro-text-2 {
+    display: block;
   }
 }
