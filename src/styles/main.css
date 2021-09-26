@@ -184,8 +184,12 @@ nav {
     display: block;
   }
 
+  .mobile-menu-container {
+    position: relative;
+  }
+
   .not-ham-btn {
-    position: fixed;
+    position: absolute;
     display: flex;
     flex-direction: column;
     background-color: black;
@@ -228,6 +232,51 @@ nav {
   .not-ham-btn > div:nth-of-type(2) {
     /* animation: 1s slide-left 0.2s;
     animation-fill-mode: forwards; */
+  }
+
+  @keyframes open-circle {
+    0% {
+      transform: scale(0);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .ham-menu-container {
+    position: fixed;
+    margin-left: -50px;
+    /* animation: open-circle 2s;
+    animation-fill-mode: forwards; */
+  }
+
+  .ham-menu-container > div:nth-of-type(1) {
+    position: absolute;
+    margin-left: 200px;
+    width: 500px;
+    height: 500px;
+    background-color: white;
+    opacity: 1;
+    border-radius: 50%;
+  }
+
+  .ham-menu-container > div:nth-of-type(2) {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    opacity: 1;
+    border-radius: 50%;
+  }
+
+  .ham-menu-container > div:nth-of-type(3) {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    opacity: 1;
+    border-radius: 50%;
   }
 
   .home-intro-text {
