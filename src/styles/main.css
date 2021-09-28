@@ -272,7 +272,7 @@ nav {
   .ham-menu-container > div:nth-of-type(2) {
     position: absolute;
     margin-left: -600px;
-    margin-top: -540px;
+    margin-top: -630px;
     width: 1200px;
     height: 1200px;
     background-color: red;
@@ -285,7 +285,7 @@ nav {
   .ham-menu-container > div:nth-of-type(3) {
     position: absolute;
     margin-left: -680px;
-    margin-top: -540px;
+    margin-top: -630px;
     width: 1200px;
     height: 1200px;
     background-color: black;
@@ -295,16 +295,28 @@ nav {
     animation-fill-mode: forwards;
   }
 
-  .mobile-menu-list {
+  .mobile-menu-container {
     position: absolute;
     display: fixed;
     z-index: 1000;
+    margin-left: 60px;
+    margin-top: 100px;
+  }
+
+  .mobile-menu-list {
     color: white;
-    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+  }
+
+  .mobile-menu-item {
+    font-family: "Montserrat Semibold";
   }
 
   .mobile-menu-list > li {
     color: white;
+    gap: 20px;
   }
 
   .home-intro-text {
