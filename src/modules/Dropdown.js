@@ -2,6 +2,8 @@
  * Drop Down Menu Module
  */
 
+"use strict";
+
 class DropDown {
   constructor(element) {
     this.element = element;
