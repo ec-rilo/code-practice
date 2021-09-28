@@ -314,6 +314,33 @@ nav {
     font-family: "Montserrat Semibold";
   }
 
+  .close-menu-btn {
+    height: 80px;
+    width: 80px;
+    background-color: black;
+    border-radius: 50%;
+    position: relative;
+    z-index: 1000;
+    left: 50%;
+    transform: translate(-50%, 85vh);
+    border: 2px solid white;
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .close-menu-btn:after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: "\d7"; /* use the hex value here... */
+    font-size: 50px;
+    color: #fff;
+    font-weight: bold;
+    line-height: 80px;
+    text-align: center;
+  }
+
   .mobile-menu-list > li {
     color: white;
     gap: 20px;
