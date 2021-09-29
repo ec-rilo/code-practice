@@ -31,6 +31,30 @@ let initMenuAnimation = (() => {
   }
 
   function openCloseBtn() {
+    let closeBtn = document.querySelector(".close-menu-btn");
+    closeBtn.classList.add("open-close-btn");
+  }
+
+  function openMenuItems() {
+    const menuItemsContainer = document.querySelector(".mobile-menu-container");
+    const menuItemsUL = document.querySelector(".mobile-menu-list");
+    menuItemsContainer.style.display = "block";
+    const menuItemsArr = menuItemsUL.children;
+    console.log(menuItemsArr.length);
+
+    let currNum = 0;
+    const setMenuItemInterval = setInterval(() => {
+      let currItem = menuItemsArr[currNum];
+      currItem.classList.add("menu-item-open-anim");
+      ++currNum;
+      console.log(currNum);
+      if (currNum === menuItemsArr.length) {
+        clearInterval(setMenuItemInterval);
+      }
+    }, 100);
+  }
+
+  function closeMobileMenu() {
     // Make it able to close the menu options with a fade out from top animation for each
     // Close the circles
     // Make the ham button appear
@@ -39,6 +63,10 @@ let initMenuAnimation = (() => {
   notHamBtn.addEventListener("click", () => {
     closeNotHamBtn();
     openCircles();
+    openCloseBtn();
+    openMenuItems();
+    const closeBtn = document.querySelector(".close-menu-btn");
+    closeBtn.addEventListener("click", () => closeMobileMenu());
     // Close the not ham btn and set it to invisible.
     // open the circles
     // Open the close button
