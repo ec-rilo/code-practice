@@ -332,6 +332,26 @@ nav {
     margin-top: 100px;
   }
 
+  @keyframes fade-in-text {
+    0% {
+      opacity: 0;
+      margin-top: 30px;
+    }
+
+    100% {
+      opacity: 1;
+      margin-top: 0px;
+    }
+  }
+
+  @keyframes fade-out-text {
+    0% {
+    }
+
+    100% {
+    }
+  }
+
   .mobile-menu-list {
     color: white;
     display: flex;
@@ -339,20 +359,38 @@ nav {
     gap: 70px;
   }
 
+  .mobile-menu-li {
+    display: none;
+    margin-top: 30px;
+  }
+
   .mobile-menu-item {
     font-family: "Montserrat Semibold";
   }
 
+  .menu-item-open-anim {
+    display: block;
+    opacity: 0;
+    animation: fade-in-text 1s;
+    animation-fill-mode: forwards;
+  }
+
+  .menu-item-close-anim {
+  }
+
   .close-menu-btn {
-    display: none;
-    height: 80px;
-    width: 80px;
+    display: block;
+    height: 60px;
+    width: 60px;
     background-color: black;
     border-radius: 50%;
     position: relative;
     z-index: 1000;
     left: 50%;
-    transform: translate(-50%, 85vh);
+    transform: translate(
+      -50%,
+      100vh
+    ); /* FIXME: 85vh is the position I WANT this to be at. Make it at this position on circle open.*/
     border: 2px solid white;
     box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
   }
@@ -367,8 +405,30 @@ nav {
     font-size: 50px;
     color: #fff;
     font-weight: bold;
-    line-height: 80px;
+    line-height: 60px;
     text-align: center;
+  }
+
+  @keyframes pop-up-anim {
+    0% {
+      transform: translate(-50%, 100vh);
+    }
+    80% {
+      transform: translate(-50%, 82vh);
+    }
+
+    100% {
+      transform: translate(-50%, 85vh);
+    }
+  }
+
+  .open-close-btn {
+    animation: pop-up-anim 0.3s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.6s;
+  }
+
+  .remove-close-btn {
   }
 
   .mobile-menu-list > li {
