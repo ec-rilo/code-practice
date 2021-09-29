@@ -353,6 +353,7 @@ nav {
   }
 
   .mobile-menu-list {
+    position: fixed;
     color: white;
     display: flex;
     flex-direction: column;
@@ -379,6 +380,7 @@ nav {
   }
 
   .close-menu-btn {
+    position: fixed;
     display: block;
     height: 60px;
     width: 60px;
