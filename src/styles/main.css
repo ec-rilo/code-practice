@@ -265,7 +265,7 @@ nav {
     }
 
     100% {
-      transform: scale(0.2);
+      transform: scale(0);
     }
   }
 
@@ -323,6 +323,11 @@ nav {
     animation-fill-mode: forwards;
   }
 
+  .close-circle {
+    animation: close-circle 1s;
+    animation-fill-mode: forwards;
+  }
+
   .mobile-menu-container {
     display: none;
     position: absolute;
@@ -346,13 +351,18 @@ nav {
 
   @keyframes fade-out-text {
     0% {
+      opacity: 1;
+      margin-top: 0px;
     }
 
     100% {
+      opacity: 0;
+      margin-top: 30px;
     }
   }
 
   .mobile-menu-list {
+    position: sticky;
     color: white;
     display: flex;
     flex-direction: column;
@@ -376,10 +386,13 @@ nav {
   }
 
   .menu-item-close-anim {
+    animation: fade-out-text 0.1s;
+    animation-fill-mode: forwards;
   }
 
   .close-menu-btn {
-    display: block;
+    position: sticky;
+    display: none;
     height: 60px;
     width: 60px;
     background-color: black;
@@ -422,6 +435,19 @@ nav {
     }
   }
 
+  @keyframes pop-down-anim {
+    0% {
+      transform: translate(-50%, 85vh);
+    }
+    80% {
+      transform: translate(-50%, 82vh);
+    }
+
+    100% {
+      transform: translate(-50%, 100vh);
+    }
+  }
+
   .open-close-btn {
     animation: pop-up-anim 0.3s;
     animation-fill-mode: forwards;
@@ -429,6 +455,8 @@ nav {
   }
 
   .remove-close-btn {
+    animation: pop-down-anim 0.3s;
+    animation-fill-mode: forwards;
   }
 
   .mobile-menu-list > li {
